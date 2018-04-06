@@ -59,7 +59,6 @@ const squareTarget = {
 
 const collect = (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
-  isOver: monitor.isOver(),
   canDrop: monitor.canDrop()
 });
 
@@ -73,7 +72,6 @@ export default class Square extends Component {
         className={cx(
           styles.square,
           isDark && styles.dark,
-          isOver && styles.isOver,
           canDrop && styles.canDrop
         )}
       >

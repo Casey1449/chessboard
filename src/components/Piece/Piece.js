@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Piece.css";
 import { DragSource } from "react-dnd";
-import bishopImg from "../../static/bishop_white.svg";
-import knightImg from "../../static/knight_black.svg";
+import bishopImg from "../../static/bishop_white.png";
+import knightImg from "../../static/knight_black.png";
 import cx from "classnames";
 
 const pieceImages = {
@@ -29,14 +29,15 @@ function collect(connect, monitor) {
 export default class Piece extends Component {
   componentDidMount() {
     const img = new Image();
-    img.src = this.props.id === "bishop" ? bishopImg : knightImg;
-    this.props.connectDragPreview(img);
+    img.src = pieceImages[this.props.id];
+
+    img.onload = () => this.props.connectDragPreview(img);
   }
   render() {
     const { connectDragSource, isDragging, id } = this.props;
-    if (isDragging) {
-      return null;
-    }
+    // if (isDragging) {
+    //   return this.props.connectDragPreview(knightImg);
+    // }
     return connectDragSource(
       <img
         className={cx(styles.piece, isDragging && styles.isDragging)}

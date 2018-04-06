@@ -3,6 +3,16 @@
   width: 75px;
 }
 
+.piece:hover {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
 .piece.isDragging {
   opacity: 0.3;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
 }

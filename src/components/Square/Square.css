@@ -9,10 +9,6 @@
   background-color: peru;
 }
 
-.square.isOver {
-  filter: brightness(90%);
-}
-
 .square.canDrop {
   background-color: #fff82a;
 }

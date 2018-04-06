@@ -5,4 +5,8 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-auto-rows: 1fr;
+  border-top: 40px solid #6b412e;
+  border-bottom: 40px solid #7d4c35;
+  border-left: 40px solid #8f573d;
+  border-right: 40px solid #593626;
 }
