@@ -1,0 +1,8 @@
+.piece {
+  height: 75px;
+  width: 75px;
+}
+
+.piece.isDragging {
+  opacity: 0.3;
+}

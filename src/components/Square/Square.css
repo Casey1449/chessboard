@@ -1,0 +1,18 @@
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blanchedalmond;
+}
+
+.square.dark {
+  background-color: peru;
+}
+
+.square.isOver {
+  filter: brightness(90%);
+}
+
+.square.canDrop {
+  background-color: #fff82a;
+}

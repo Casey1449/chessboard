@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-
-import styles from "./App.css";
+import Board from "./components/Board/Board";
 
 class App extends Component {
   render() {
-    return <div className={styles.App}>hi</div>;
+    return <Board />;
   }
 }
 
