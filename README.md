@@ -30,10 +30,12 @@
   * Potential Solve #1: Import the 'touch backend' for react-dnd, and then do some browser/device sniffing to decide which backend to use. Image previews would break and have to be re-worked.
   * Potential Solve #2: Create a parallel click/tap based interface, where pieces can either be dragged _or_ tapped (selected), and dropped via a second tap on the target square.
 
-* The logic around 'blocked' square (i.e. the squares in the Bishop's legal 'path' that are on the leeward side of the knight) relies on the assumption that there are only two pieces. This is not scalable and needs reworking.
+* The logic around 'blocked' squares (i.e. the squares in the Bishop's legal 'path', but that are on the leeward side of the Knight) relies on the assumption that there are only two pieces. This is not scalable and needs reworking.
 
 * Obviously needs tests.
 
-- Would be nice to implement 'turns', requiring alternation between knight abd bishop moves.
+- Currently the design unresponsive, but it could be made responsive fairly easily. The piece sprites, and the drag previews in particular, would be the bottleneck here.
+
+- Would be nice to implement 'turns', requiring alternation between knight and bishop moves.
 
 * Would be nice to implement a 'move log' in a sidebar that logs the moves in proper chess notation, and a proper number/letter grid on the axes of the board.

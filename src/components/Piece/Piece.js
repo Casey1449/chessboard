@@ -17,27 +17,24 @@ const pieceSource = {
   }
 };
 
-function collect(connect, monitor) {
-  return {
-    connectDragSource: connect.dragSource(),
-    connectDragPreview: connect.dragPreview(),
-    isDragging: monitor.isDragging()
-  };
-}
+const collect = (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  connectDragPreview: connect.dragPreview(),
+  isDragging: monitor.isDragging()
+});
 
 @DragSource("piece", pieceSource, collect)
 export default class Piece extends Component {
   componentDidMount() {
+    const { id, connectDragPreview } = this.props;
     const img = new Image();
-    img.src = pieceImages[this.props.id];
-
-    img.onload = () => this.props.connectDragPreview(img);
+    img.src = pieceImages[id];
+    img.onload = () => connectDragPreview(img);
   }
+
   render() {
     const { connectDragSource, isDragging, id } = this.props;
-    // if (isDragging) {
-    //   return this.props.connectDragPreview(knightImg);
-    // }
+
     return connectDragSource(
       <img
         className={cx(styles.piece, isDragging && styles.isDragging)}

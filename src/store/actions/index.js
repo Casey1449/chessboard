@@ -1,12 +1,7 @@
-export const MOVE_KNIGHT = "MOVE_KNIGHT";
-export const MOVE_BISHOP = "MOVE_BISHOP";
+export const MOVE_PIECE = "MOVE_PIECE";
 
-export const moveKnight = (x, y) => ({
-  type: MOVE_KNIGHT,
-  position: [x, y]
-});
-
-export const moveBishop = (x, y) => ({
-  type: MOVE_BISHOP,
+export const movePiece = (x, y, pieceId) => ({
+  type: MOVE_PIECE,
+  pieceId,
   position: [x, y]
 });

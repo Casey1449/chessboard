@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import { DragDropContext } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import { connect } from "react-redux";
-import { moveKnight, moveBishop } from "../../store/actions/index";
+import { movePiece } from "../../store/actions/index";
 import Piece from "../Piece/Piece";
 import Square from "../Square/Square";
 import styles from "./Board.css";
 
 @connect(({ piecePositions }) => ({ piecePositions }), {
-  moveKnight,
-  moveBishop
+  movePiece
 })
 @DragDropContext(HTML5Backend)
 export default class Board extends Component {
@@ -27,12 +26,12 @@ export default class Board extends Component {
     }
     return (
       <Square
+        key={`${x}${y}`}
         x={x}
         y={y}
         piece={piece}
         piecePositions={piecePositions}
-        moveKnight={this.props.moveKnight}
-        moveBishop={this.props.moveBishop}
+        movePiece={this.props.movePiece}
       />
     );
   };
